@@ -1,0 +1,139 @@
+Changelog
+=========
+
+0.97 (2009-05-18)
+-----------------
+
+    * Eggfication
+      [erico_andrei]
+
+    * Supports only Plone >= 3.1.x
+      [erico_andrei]
+      
+    * PloneFormGen fields where moved away. Will show up in a separate package.
+      [erico_andrei]
+
+0.96 ()
+-------
+
+    * Installs on Plone 3.0 and Plone 3.1
+      [erico_andrei] 
+
+0.92 ()
+-------
+
+    * Corrects PloneFormGen support
+      [erico_andrei] 
+
+0.91 ()
+-------
+
+    * Added 87 code area (Petrolina)
+      [erico_andrei]
+
+0.9 ()
+------
+
+    * improved support for PloneFormGen
+      [erico_andrei]
+
+0.7 ()
+------
+
+    * containing
+        * content/BrFieldsAndWidgets
+            
+            * CPFWidget
+            
+            * CPFField
+            
+            * CNPJWidget
+            
+            * CNPJField
+            
+            * CEPWidget
+            
+            * CEPField
+            
+            * BrPhoneWidget
+            
+            * BrPhoneField
+            
+            * BrTimeWidget
+            
+        * content/br_endereco
+            
+            * Mixin class for brazilian addresses
+        
+        * content/PloneFormGen
+            
+            * PloneFormGen add on types
+            
+
+0.62 ()
+-------
+
+    * containing
+        
+        * CPFWidget
+        
+        * CPFField
+        
+        * CNPJWidget
+        
+        * CNPJField
+        
+        * CEPWidget
+        
+        * CEPField
+        
+        * BrPhoneWidget
+        
+        * BrPhoneField
+        
+        * BrTimeWidget
+        
+        * content/br_endereco
+            
+            * Mixin class for brazilian addresses
+            
+        * PloneFormGen add on types
+        
+0.5 ()
+------
+
+    * containing
+        
+        * CPFWidget
+        
+        * CPFField
+        
+        * CNPJWidget
+        
+        * CNPJField
+        
+        * CEPWidget
+        
+        * CEPField
+        
+        * BrPhoneWidget
+        
+        * BrPhoneField
+        
+        * BrTimeWidget
+        
+        * content/br_endereco
+            
+            * Mixin class for brazilian addresses
+
+0.4  ()
+-------
+    * Initial release containing:
+        
+        * CPFWidget
+        
+        * CNPJWidget
+    
+        * CEPWidget
+    
+        * BrPhoneWidget    

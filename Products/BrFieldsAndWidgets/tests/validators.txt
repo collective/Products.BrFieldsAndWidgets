@@ -1,0 +1,49 @@
+We will test all our validators
+
+    >>> from Products.BrFieldsAndWidgets import validators
+    >>> valCpf = validators.ValidadorCPF
+    >>> valCnpj = validators.ValidadorCNPJ
+    >>> valCep = validators.ValidadorCEP
+    >>> valBrPh = validators.ValidadorBrPhone
+
+Let's validate CPF::
+    
+    >>> assert valCpf('81057807559')
+    >>> assert valCpf('810.578.075-59')
+    >>> assert valCpf('81057807554') is not True
+    >>> assert valCpf('810578074') is not True
+    >>> assert valCpf('810578075591') is not True
+
+Let's validate CNPJ::
+
+    >>> assert valCnpj('90.656.353/0001-37')
+    >>> assert valCnpj('90656353000137')
+    >>> assert valCnpj('90656353000134') is not True
+    >>> assert valCnpj('90656353137') is not True
+    >>> assert valCnpj('906563530001347') is not True
+
+Validating Cep (zip codes)::
+
+    >>> assert valCep('05417-010')
+    >>> assert valCep('95417-010')
+    >>> assert valCep('25417000')
+    >>> assert valCep('05417-a10') is not True
+    >>> assert valCep('95417--10')is not True
+    >>> assert valCep('5417000') is not True
+
+Validates Brazilian Telephones::
+
+    >>> assert valBrPh('(11)38982121')
+    >>> assert valBrPh('(11)3898-2121')
+    >>> assert valBrPh('1138982121')
+    >>> assert valBrPh('11-3898-2121')
+    >>> assert valBrPh('0800 61 12345')
+    >>> assert valBrPh('0800-556996')
+    >>> assert valBrPh('0800-7764832')
+    >>> assert valBrPh('08007764832')
+    >>> assert valBrPh('0800 7764832')
+    >>> assert valBrPh('0300-789-7771')
+    >>> assert valBrPh('0800 77A4832') is not True
+    >>> assert valBrPh('11-3333-PORTO') is not True
+    >>> assert valBrPh('011-3333-5436') is not True
+    >>> assert valBrPh('+11-5555-55555') is not True
