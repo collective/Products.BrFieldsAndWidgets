@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0.1 (2009-06-02)
+-------_---------
+
+    * Adds backward compatibility to codes relying on br_endereco mixin
+      [erico_andrei]
+
 1.0 (2009-06-02)
 ----------------
 
