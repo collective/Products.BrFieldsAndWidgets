@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.0 (2009-06-02)
+----------------
+
+    * First proper release of Products.BrFieldsAndWidgets
+      [erico_andrei]
+    
+
 0.97 (2009-05-18)
 -----------------
 
