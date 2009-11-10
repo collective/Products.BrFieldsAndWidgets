@@ -10,7 +10,7 @@
 
   <genericsetup:registerProfile
      name="default"
-     title="Products.BrFieldsAndWidgets"
+     title="Campos Brasileiros para Archetypes"
      directory="profiles/default"
      description="Profile for BrFieldsAndWidgets."
      provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -19,11 +19,12 @@
 
   <genericsetup:registerProfile
      name="example"
-     title="BrFieldsAndWidgets (Example BrFieldsAndWidgets content types)"
+     title="Tipos de exemplo para Campos Brasileiros do Archetypes"
      directory="profiles/example"
      description="Example content types for BrFieldsAndWidgets."
      provides="Products.GenericSetup.interfaces.EXTENSION"
      for=".interfaces.DemoProfile"
      />
    <i18n:registerTranslations directory="locales" />
+   
 </configure>

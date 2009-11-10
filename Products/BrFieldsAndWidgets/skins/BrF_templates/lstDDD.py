@@ -8,8 +8,8 @@
 ##title=
 ##
 
-lstCodArea = [11,
-          12,
+lstCodArea = [11, # Grande Sao Paulo
+          12, 
           13,
           14,
           15,
@@ -18,8 +18,10 @@ lstCodArea = [11,
           18,
           19,
           21,
+          22, # Interior do RJ
           24,
           27,
+          28, # Interior do ES
           31,
           32,
           33,
@@ -43,7 +45,9 @@ lstCodArea = [11,
           61,
           62,
           63,
+          64, # Interior de GO
           65,
+          66, # Interior do MT
           67,
           68,
           69,
@@ -61,16 +65,21 @@ lstCodArea = [11,
           86,
           87,
           88,
+          89, # Interior do PI
           91,
           92,
+          93, # Interior do PA
+          94, # Interior do PA
           95,
           96,
+          97, # Interior do AM
           98,
+          99, # Interior do MA
           '0300',
           '0500',
           '0800',]
-          
-lstTupCodArea = [(item, item) for item in lstCodArea]      
-lstReturn = [('--','--')]
+         
+lstTupCodArea = [(item, item) for item in lstCodArea]     
+lstReturn = [('','--')]
 
 return lstReturn + lstTupCodArea
