@@ -28,8 +28,7 @@
                                     value python:value or '';
                                     value python:((len(value)>2) and value) or ''">
                     (<select tal:attributes="name python:'a%s' % fieldName;
-                                            id python:'a%s' % fieldName;
-                                            tabindex tabindex/next;"
+                                            id python:'a%s' % fieldName;"
                              tal:define="vocab python:here.lstDDD();
                                             value_ddd python:here.phoneFormat(value,'ddd');" onChange="updatePhone(this);">
 
@@ -42,7 +41,6 @@
 
                     </select>)
                 <input tal:attributes="name python:'a%s' % fieldName;
-                                       tabindex tabindex/next;
                                        value python:here.phoneFormat(value,'phone')" type="text" size="8" maxlength="8" onKeyUp="updatePhone(this);" onchange="updatePhone(this);">
                 
                 <input type="hidden" tal:attributes="name fieldName;

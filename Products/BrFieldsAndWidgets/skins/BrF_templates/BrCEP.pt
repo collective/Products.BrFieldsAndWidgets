@@ -26,10 +26,8 @@
 
             <metal:fill fill-slot="widget_body" tal:define="value python:value or '';">
                 <input tal:attributes="name python:'a%s' % fieldName;
-                                        tabindex tabindex/next;
                                        value python:value[:5]" type="text" size="5" maxlength="5" onchange="autoTab(this,0);" onKeyup="autoTab(this,0);">-
                 <input tal:attributes="name python:'a%s' % fieldName;
-                                       tabindex tabindex/next;
                                        value python:value[5:]" type="text" size="3" maxlength="3"  onchange="autoTab(this,1);" onKeyup="autoTab(this,1);">
                 <input type="hidden" tal:attributes="name fieldName;
                                        value value" type="text" maxlength="8">

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from Products.CMFCore import utils
 from Products.CMFCore.DirectoryView import registerDirectory
 from Products.Archetypes.public import process_types, listTypes
@@ -14,13 +16,12 @@ MessageFactory = BaseMessageFactory('Products.BrFieldsAndWidgets')
 from Products.BrFieldsAndWidgets import validators
 from Products.BrFieldsAndWidgets.content import BrFieldsAndWidgetsDemo
 
-
 def initialize(context):
     
     content_types, constructors, ftis = process_types(
         listTypes(PROJECTNAME),
         PROJECTNAME)
-        utils.ContentInit(
+    utils.ContentInit(
             PROJECTNAME + ' Content',
             content_types      = content_types,
             permission         = ADD_CONTENT_PERMISSION,

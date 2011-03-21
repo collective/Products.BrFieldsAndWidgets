@@ -25,7 +25,6 @@
                         tal:define="value python:value or ''">
                     <select tal:attributes="name python:'a%s' % fieldName;
                                             id python:'a%s' % fieldName;
-                                            tabindex tabindex/next;
                                             value python:value[:2];"
                              tal:define="vocab python:['%02d' % hora for hora in range(0,24)];
                                          value_combo python:value[:2];" onChange="updateTime(this);">
@@ -39,7 +38,6 @@
                     </select>&nbsp;h&nbsp;
                     <select tal:attributes="name python:'a%s' % fieldName;
                                             id python:'a%s' % fieldName;
-                                            tabindex tabindex/next;
                                             value python:value[2:];"
                              tal:define="vocab python:['%02d' % minuto for minuto in range(0,60,5)];
                                          value_combo python:value[2:];" onChange="updateTime(this);" onChange="updateTime(this);">min

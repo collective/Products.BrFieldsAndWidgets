@@ -5,6 +5,7 @@ Changelog
 ------------------
     
     * Fixes DDD vocabulary [erico_andrei]
+    * Compatibility with Plone 4 [lepri]
 
 1.0.1 (2009-06-02)
 ------------------

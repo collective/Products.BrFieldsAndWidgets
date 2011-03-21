@@ -1,5 +1,9 @@
+# -*- coding: utf-8 -*-
+
 __author__  = '''Simples Consultoria'''
 __docformat__ = 'plaintext'
+
+from zope.interface import implements
 
 from Products.validation.interfaces import ivalidator
 
@@ -7,6 +11,7 @@ from Products.validation.config import validation
 from Products.validation.interfaces.IValidator import IValidator
 
 from Products.BrFieldsAndWidgets import MessageFactory as _
+from Products.BrFieldsAndWidgets.config import USE_BBB_VALIDATORS
 
 import re
 
@@ -18,7 +23,10 @@ class ValidadorCPF:
     Baseado em http://www.pythonbrasil.com.br/moin.cgi/VerificadorDeCPF .
     """
     
-    __implements__ = IValidator
+    if USE_BBB_VALIDATORS:
+        __implements__ = (ivalidator,)
+    else:
+        implements(IValidator)
     
     def __init__(self, name, title='', description=''):
         self.name = name
@@ -63,7 +71,10 @@ class ValidadorCNPJ:
     Baseado em http://www.pythonbrasil.com.br/moin.cgi/VerificadorDeCnpj
     """
     
-    __implements__ = IValidator
+    if USE_BBB_VALIDATORS:
+        __implements__ = (ivalidator,)
+    else:
+        implements(IValidator)
     
     def __init__(self, name, title='', description=''):
         self.name = name
@@ -111,7 +122,10 @@ class ValidadorCEP:
     pode ser qualquer digito entre 0 e 9.
     """
     
-    __implements__ = IValidator
+    if USE_BBB_VALIDATORS:
+        __implements__ = (ivalidator,)
+    else:
+        implements(IValidator)
     
     def __init__(self, name, title='', description=''):
         self.name = name
@@ -137,7 +151,10 @@ class ValidadorBrPhone:
         0n00XXXXXX (n sendo 3 ou 8)
     """
     
-    __implements__ = IValidator
+    if USE_BBB_VALIDATORS:
+        __implements__ = (ivalidator,)
+    else:
+        implements(IValidator)
     
     def __init__(self, name, title='', description=''):
         self.name = name

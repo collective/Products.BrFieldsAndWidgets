@@ -3,7 +3,7 @@
 from Products.Archetypes.public import *
 
 from Products.BrFieldsAndWidgets import MessageFactory as _
-
+from Products.BrFieldsAndWidgets.config import PROJECTNAME
 from AccessControl import ClassSecurityInfo
 
 from Products.BrFieldsAndWidgets.content.BrFieldsAndWidgets import *
@@ -37,4 +37,4 @@ class BrFieldsAndWidgetsDemo(BaseContent):
     security = ClassSecurityInfo()
 
 
-registerType(BrFieldsAndWidgetsDemo)
+registerType(BrFieldsAndWidgetsDemo,PROJECTNAME)

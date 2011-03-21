@@ -5,5 +5,5 @@ class DemoProfile(Z3Interface):
 
 
 # Zope imports
-from Interface import Interface
+#from Interface import Interface
 
