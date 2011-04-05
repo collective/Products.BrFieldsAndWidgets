@@ -12,6 +12,7 @@ Requirements
 ------------
 
     - Plone 3.1.x (http://plone.org/products/plone)
+    - Plone 4.0.x (http://plone.org/products/plone)
     
 Installation
 ------------
@@ -64,4 +65,6 @@ Credits
 
     * Erico Andrei (erico at simplesconsultoria dot com dot br) - Packaging and
       plumbing.
+
+    * Gustavo Lepri (lepri at simplesconsultoria dot com dot br)
 
