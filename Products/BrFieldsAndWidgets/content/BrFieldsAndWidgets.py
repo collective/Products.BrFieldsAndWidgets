@@ -1,9 +1,10 @@
+# -*- coding:utf-8 -*-
+
 from AccessControl import ClassSecurityInfo
 from Products.Archetypes.public import StringWidget
 from Products.Archetypes.Registry import registerWidget
 from Products.Archetypes.Field import StringField
 
-from Products.BrFieldsAndWidgets import MessageFactory as _
 
 class CPFWidget(StringWidget):
     security = ClassSecurityInfo()
