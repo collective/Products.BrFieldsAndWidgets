@@ -6,9 +6,9 @@ from AccessControl import ClassSecurityInfo
 from Products.Archetypes.atapi import *
 
 from Products.BrFieldsAndWidgets.content.BrFieldsAndWidgets import *
-from Products.CMFPlone.utils import getToolByName
 
 from Products.BrFieldsAndWidgets import MessageFactory as _
+
 
 schema = Schema((
     StringField(
@@ -177,6 +177,7 @@ class br_endereco:
     schema = br_endereco_schema
 
     security.declarePrivate('fmt_endereco')
+
     def fmt_endereco(self):
         """Retorna um endereco formatado para o atributo Endereco
         """
@@ -191,7 +192,13 @@ class br_endereco:
         cidade = self.getCidade()
         uf= self.getUf()
 
-        return template % (logradouro, numero, complemento, bairro, cep, cidade, uf)
+        return template % (logradouro,
+                           numero,
+                           complemento,
+                           bairro,
+                           cep,
+                           cidade,
+                           uf)
 
 
     security.declarePrivate('vocLstUF')
