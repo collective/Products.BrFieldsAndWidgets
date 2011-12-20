@@ -25,6 +25,7 @@ setup(name='Products.BrFieldsAndWidgets',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'collective.brasil.vocab',
       ],
       entry_points="""
       # -*- Entry points: -*-
