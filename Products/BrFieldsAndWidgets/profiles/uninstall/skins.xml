@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_skins">
+ <object name="BrF_images" remove="True"/>
+ <object name="BrF_templates" remove="True"/>
+
+ <skin-path name="*">
+     <layer name="BrF_images" remove="True"/>
+     <layer name="BrF_templates" remove="True"/>
+ </skin-path>
+</object>

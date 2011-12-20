@@ -12,7 +12,7 @@
      name="default"
      title="Campos Brasileiros para Archetypes"
      directory="profiles/default"
-     description="Profile for BrFieldsAndWidgets."
+     description="Suporte a campos brasileiros para Archetypes"
      provides="Products.GenericSetup.interfaces.EXTENSION"
      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
      />
@@ -25,6 +25,16 @@
      provides="Products.GenericSetup.interfaces.EXTENSION"
      for=".interfaces.DemoProfile"
      />
+
+  <genericsetup:registerProfile
+     name="uninstall"
+     title="Uninstall Campos Brasileiros para Archetypes"
+     directory="profiles/uninstall"
+     description="Uninstall Campos Brasileiros para Archetypes."
+     provides="Products.GenericSetup.interfaces.EXTENSION"
+     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+     />
+     
    <i18n:registerTranslations directory="locales" />
    
 </configure>
