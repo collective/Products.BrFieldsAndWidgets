@@ -8,6 +8,8 @@
 
   <five:registerPackage package="." initialize=".initialize" />
 
+  <includeDependencies package="." />
+
   <genericsetup:registerProfile
      name="default"
      title="Campos Brasileiros para Archetypes"
