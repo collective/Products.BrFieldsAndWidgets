@@ -1,18 +1,18 @@
+# -*- coding:utf-8 -*-
 """ demonstrates the use of BrFieldsAndWidgets """
-
-from Products.Archetypes.public import *
-
-from Products.BrFieldsAndWidgets import MessageFactory as _
-from Products.BrFieldsAndWidgets.config import PROJECTNAME
 from AccessControl import ClassSecurityInfo
 
-from Products.BrFieldsAndWidgets.content.BrFieldsAndWidgets import *
-from Products.BrFieldsAndWidgets.validators import ValidadorCNPJ
-from Products.BrFieldsAndWidgets.validators import ValidadorCPF
-from Products.BrFieldsAndWidgets.validators import ValidadorCEP
-from Products.BrFieldsAndWidgets.validators import ValidadorBrPhone
+from Products.Archetypes import atapi
 
-schema = BaseSchema +  Schema((
+from Products.BrFieldsAndWidgets.config import PROJECTNAME
+
+from Products.BrFieldsAndWidgets.content.BrFieldsAndWidgets import CPFField
+from Products.BrFieldsAndWidgets.content.BrFieldsAndWidgets import CEPField
+from Products.BrFieldsAndWidgets.content.BrFieldsAndWidgets import CNPJField
+from Products.BrFieldsAndWidgets.content.BrFieldsAndWidgets import BrPhoneField
+
+
+schema = atapi.BaseSchema + atapi.Schema((
     CPFField('cpf',
                 searchable=1,
                 ),
@@ -27,7 +27,8 @@ schema = BaseSchema +  Schema((
                 ),
 ))
 
-class BrFieldsAndWidgetsDemo(BaseContent):
+
+class BrFieldsAndWidgetsDemo(atapi.BaseContent):
     """
     Demo for BrFieldsAndWidgets
     """
@@ -37,4 +38,4 @@ class BrFieldsAndWidgetsDemo(BaseContent):
     security = ClassSecurityInfo()
 
 
-registerType(BrFieldsAndWidgetsDemo,PROJECTNAME)
+atapi.registerType(BrFieldsAndWidgetsDemo, PROJECTNAME)
