@@ -3,17 +3,18 @@ __author__ = """Simples Consultoria <contato@simplesconsultoria.com.br>"""
 __docformat__ = 'plaintext'
 
 from AccessControl import ClassSecurityInfo
-from Products.Archetypes.atapi import *
+from Products.Archetypes import atapi
 
-from Products.BrFieldsAndWidgets.content.BrFieldsAndWidgets import *
+from Products.BrFieldsAndWidgets.content.BrFieldsAndWidgets import CEPField
+from Products.BrFieldsAndWidgets.content.BrFieldsAndWidgets import CEPWidget
 
 from Products.BrFieldsAndWidgets import MessageFactory as _
 
 
-schema = Schema((
-    StringField(
+schema = atapi.Schema((
+    atapi.StringField(
         name='logradouro',
-        widget=StringWidget(
+        widget=atapi.StringWidget(
             size="30",
             visible={'view': 'invisible', 'edit': 'visible'},
             label=_(u'Logradouro'),
@@ -23,9 +24,9 @@ schema = Schema((
         schemata="Address"
     ),
 
-    StringField(
+    atapi.StringField(
         name='numero',
-        widget=StringWidget(
+        widget=atapi.StringWidget(
             size="7",
             visible={'view': 'invisible', 'edit': 'visible'},
             label=_(u'Número'),
@@ -35,18 +36,18 @@ schema = Schema((
         schemata="Address"
     ),
 
-    StringField(
+    atapi.StringField(
         name='complemento',
-        widget=StringWidget(
+        widget=atapi.StringWidget(
             visible={'view': 'invisible', 'edit': 'visible'},
             label=_(u'Complemento'),
         ),
         schemata="Address"
     ),
 
-    StringField(
+    atapi.StringField(
         name='bairro',
-        widget=StringWidget(
+        widget=atapi.StringWidget(
             visible={'view': 'invisible', 'edit': 'visible'},
             size="30",
             label=_(u'Bairro'),
@@ -67,9 +68,9 @@ schema = Schema((
         schemata="Address"
     ),
 
-    StringField(
+    atapi.StringField(
         name='cidade',
-        widget=StringWidget(
+        widget=atapi.StringWidget(
             visible={'view': 'invisible', 'edit': 'visible'},
             label=_(u'Cidade'),
             description=_(u'Informe sua cidade.'),
@@ -78,9 +79,9 @@ schema = Schema((
         schemata="Address"
     ),
 
-    StringField(
+    atapi.StringField(
         name='uf',
-        widget=SelectionWidget
+        widget=atapi.SelectionWidget
         (
             visible={'view': 'invisible', 'edit': 'visible'},
             size=1,
@@ -93,10 +94,10 @@ schema = Schema((
         enforceVocabulary=True,
     ),
 
-    ComputedField(
+    atapi.ComputedField(
         name='Endereco',
         expression='context.fmt_endereco()',
-        widget=ComputedWidget(
+        widget=atapi.ComputedWidget(
             visible={'view': 'visible', 'edit': 'invisible'},
             label=_(u'Endereço'),
         ),
@@ -105,10 +106,10 @@ schema = Schema((
         searchable=True
     ),
 
-    TextField(
+    atapi.TextField(
         name='referencia',
         allowable_content_types=('text/html', ),
-        widget=RichWidget
+        widget=atapi.RichWidget
         (
             visible={'view': 'invisible', 'edit': 'invisible'},
             label=_(u'Referência'),
@@ -124,7 +125,7 @@ schema = Schema((
 )
 
 
-br_endereco_schema = BaseSchema.copy() + schema.copy()
+br_endereco_schema = atapi.BaseSchema.copy() + schema.copy()
 
 
 class br_endereco:
