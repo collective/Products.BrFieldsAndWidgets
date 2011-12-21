@@ -3,8 +3,10 @@ __author__ = '''Simples Consultoria'''
 __docformat__ = 'plaintext'
 
 from zope.interface import implements
+from zope.component import queryUtility
 
 from Products.validation.interfaces import ivalidator
+from zope.schema.interfaces import IVocabularyFactory
 
 from Products.validation.config import validation
 from Products.validation.interfaces.IValidator import IValidator
@@ -13,7 +15,6 @@ from Products.BrFieldsAndWidgets import MessageFactory as _
 from Products.BrFieldsAndWidgets.config import USE_BBB_VALIDATORS
 
 listValidators = []
-
 
 class ValidadorCPF:
     """
@@ -167,16 +168,36 @@ class ValidadorBrPhone:
         self.description = description
 
     def __call__(self, value, *args, **kw):
+
+        if value.startswith('+'):
+            return _(u"Telefone inválido")
         phone = ''.join([c for c in value if c.isdigit()])
         status = True
-
         if phone.startswith('0'):
-            if not((len(phone) in [10, 11]) and phone.isdigit()):
+            if not((self.validate_cng(phone[:4])) and (len(phone) in [10, 11])):
                 status = False
-        elif not(len(phone) in [9, 10] and phone.isdigit()):
+        elif not((self.validate_ddd(phone[:2])) and (len(phone) in [9, 10])):
             status = False
 
         return status or _(u"Telefone inválido")
+
+    def validate_ddd(self, value):
+        util = queryUtility(IVocabularyFactory, 'brasil.ddd')
+        ddd = util()
+        try:
+            item = ddd.by_token[value]
+            return item
+        except KeyError:
+            return False
+
+    def validate_cng(self, value):
+        util = queryUtility(IVocabularyFactory, 'brasil.cng')
+        cng = util()
+        try:
+            item = cng.by_token[value]
+            return item
+        except KeyError:
+            return False
 
 
 listValidators.append(ValidadorBrPhone('isBrPhone',
