@@ -1,8 +1,8 @@
 Changelog
-=========
+----------
 
 1.0.3 (unreleased)
-------------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Fixed CNPJ validator [ericof]
 
@@ -16,26 +16,26 @@ Changelog
 
 
 1.0.2 (2011-04-05)
-------------------
+^^^^^^^^^^^^^^^^^^^^
     
     * Fixes DDD vocabulary [erico_andrei]
     * Compatibility with Plone 4 [lepri]
 
 1.0.1 (2009-06-02)
-------------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Adds backward compatibility to codes relying on br_endereco mixin
       [erico_andrei]
 
 1.0 (2009-06-02)
-----------------
+^^^^^^^^^^^^^^^^^^^^
 
     * First proper release of Products.BrFieldsAndWidgets
       [erico_andrei]
     
 
 0.97 (2009-05-18)
------------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Eggfication
       [erico_andrei]
@@ -47,31 +47,31 @@ Changelog
       [erico_andrei]
 
 0.96 ()
--------
+^^^^^^^^^^^^^^^^^^^^
 
     * Installs on Plone 3.0 and Plone 3.1
       [erico_andrei] 
 
 0.92 ()
--------
+^^^^^^^^^^^^^^^^^^^^
 
     * Corrects PloneFormGen support
       [erico_andrei] 
 
 0.91 ()
--------
+^^^^^^^^^^^^^^^^^^^^
 
     * Added 87 code area (Petrolina)
       [erico_andrei]
 
 0.9 ()
-------
+^^^^^^^^^^^^^^^^^^^^
 
     * improved support for PloneFormGen
       [erico_andrei]
 
 0.7 ()
-------
+^^^^^^^^^^^^^^^^^^^^
 
     * containing
         * content/BrFieldsAndWidgets
@@ -104,7 +104,7 @@ Changelog
             
 
 0.62 ()
--------
+^^^^^^^^^^^^^^^^^^^^
 
     * containing
         
@@ -133,7 +133,7 @@ Changelog
         * PloneFormGen add on types
         
 0.5 ()
-------
+^^^^^^^^^^^^^^^^^^^^
 
     * containing
         
@@ -160,7 +160,7 @@ Changelog
             * Mixin class for brazilian addresses
 
 0.4  ()
--------
+^^^^^^^^^^^^^^^^^^^^
     * Initial release containing:
         
         * CPFWidget
