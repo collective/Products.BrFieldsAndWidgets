@@ -26,6 +26,7 @@ class BaseTestCase(unittest.TestCase):
         self.qi = getattr(self.portal, 'portal_quickinstaller')
         self.pp = getattr(self.portal, 'portal_properties')
         self.st = getattr(self.portal, 'portal_setup')
+        self.skins = getattr(self.portal, 'portal_skins')
         self.setUpUser()
 
 
@@ -36,6 +37,10 @@ class TestInstall(BaseTestCase):
         PROJECTNAME = 'BrFieldsAndWidgets'
         self.failUnless(self.qi.isProductInstalled(PROJECTNAME),
                         '%s not installed' % PROJECTNAME)
+
+    def test_skin_layer_installed(self):
+        self.failUnless('BrF_images' in self.skins.objectIds())
+        self.failUnless('BrF_templates' in self.skins.objectIds()) 
 
 
 class TestUninstall(BaseTestCase):
@@ -49,6 +54,10 @@ class TestUninstall(BaseTestCase):
     def test_uninstalled(self):
         PROJECTNAME = 'BrFieldsAndWidgets'
         self.failIf(self.qi.isProductInstalled(PROJECTNAME))
+
+    def test_skin_layer_uninstalled(self):
+        self.failIf('BrF_images' in self.skins.objectIds())
+        self.failIf('BrF_templates' in self.skins.objectIds()) 
 
 
 def test_suite():
