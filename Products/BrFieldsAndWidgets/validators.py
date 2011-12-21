@@ -16,6 +16,7 @@ from Products.BrFieldsAndWidgets.config import USE_BBB_VALIDATORS
 
 listValidators = []
 
+
 class ValidadorCPF:
     """
     Validador para verificar se o CPF informado e valido
@@ -160,11 +161,12 @@ class ValidadorBrPhone:
         if value.startswith('+'):
             return _(u"Telefone inválido")
         phone = ''.join([c for c in value if c.isdigit()])
+        len_phone = len(phone)
         status = True
         if phone.startswith('0'):
-            if not((self.validate_cng(phone[:4])) and (len(phone) in [10, 11])):
+            if not((self.validate_cng(phone[:4])) and (len_phone in [10, 11])):
                 status = False
-        elif not((self.validate_ddd(phone[:2])) and (len(phone) in [9, 10])):
+        elif not((self.validate_ddd(phone[:2])) and (len_phone in [9, 10])):
             status = False
 
         return status or _(u"Telefone inválido")
