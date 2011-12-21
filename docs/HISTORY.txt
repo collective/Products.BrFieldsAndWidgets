@@ -4,7 +4,15 @@ Changelog
 1.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+    * Fixed CNPJ validator [ericof]
+
+    * Validators now use collective.brasil.vocab [ericof]
+
+    * Move to plone.app.testing [ericof]
+    
+    * PEP 8 [ericof]
+    
+    * Add an uninstall profile [ericof]
 
 
 1.0.2 (2011-04-05)
