@@ -117,7 +117,7 @@ class TestCEPValidator(unittest.TestCase):
         self.failIfEqual(self.v('05421-00x'), 1)
 
 
-class TestCEPValidator(unittest.TestCase):
+class TestPhoneValidator(unittest.TestCase):
 
     layer = INTEGRATION_TESTING
 
