@@ -1,22 +1,30 @@
 from setuptools import setup, find_packages
 import os
 
-version = open(os.path.join("Products", "BrFieldsAndWidgets", "version.txt")).read().strip()
+version = open(os.path.join("Products", "BrFieldsAndWidgets", 
+                            "version.txt")).read().strip()
 
 setup(name='Products.BrFieldsAndWidgets',
       version=version,
       description="Brazilian fields and widgets to be used with Plone and Archetypes",
-      long_description=open(os.path.join("Products", "BrFieldsAndWidgets", "README.txt")).read().decode('UTF8').encode('ASCII', 'replace') + '\n' +
+      long_description=open(os.path.join("README.rst")).read() + '\n' +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Framework :: Plone",
+        "Framework :: Plone :: 3.3",
+        "Framework :: Plone :: 4.0",
+        "Framework :: Plone :: 4.1",
+        "Framework :: Zope2",
+        "Framework :: Zope3",
+        "Intended Audience :: Developers",
+        "Natural Language :: Portuguese (Brazilian)",
         "Programming Language :: Python",
+        "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='plone archetypes widget BrFieldsAndWidgets brazil',
+      keywords='plone archetypes widget BrFieldsAndWidgets brazil brasil',
       author='Simples Consultoria',
       author_email='products@simplesconsultoria.com.br',
-      url='http://plone.org/products/Products.BrFieldsAndWidgets',
+      url='https://github.com/collective/Products.BrFieldsAndWidgets',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['Products'],
