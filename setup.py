@@ -27,6 +27,9 @@ setup(name='Products.BrFieldsAndWidgets',
           # -*- Extra requirements: -*-
           'collective.brasil.vocab>=0.8',
       ],
+      extras_require={
+        'test': ['plone.app.testing'],
+        },
       entry_points="""
       # -*- Entry points: -*-
       """,
