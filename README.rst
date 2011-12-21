@@ -9,7 +9,7 @@ Overview
 ----------------
 
 Products.BrFieldsAndWidgets is a product that aims to help Brazilian developers 
-to deploy AT based content types on a Plone 3 site. 
+to deploy AT based content types on a Plone  site. 
 
 
 Requirements
@@ -17,6 +17,7 @@ Requirements
 
     * Plone 3.1.x (http://plone.org/products/plone)
     * Plone 4.0.x (http://plone.org/products/plone)
+    * Plone 4.1.x (http://plone.org/products/plone)
     
 Installation
 ------------
