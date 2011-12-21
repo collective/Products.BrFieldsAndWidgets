@@ -84,33 +84,21 @@ class ValidadorCNPJ:
         self.description = description
 
     def __call__(self, value, *args, **kw):
-        cnpj = value
-        cnpj = ''.join([c for c in value if c.isdigit()])
-        if len(cnpj) != 14:
+        digits = [int(c) for c in value if c.isdigit()]
+        if len(digits) != 14:
             return _(u"O CNPJ deve ter 14 dígitos.")
-        elif len(cnpj) == 14:
-            vtemp = [int(cnpj[:1]) for i in list(cnpj[:8])]
-            cnpj2 = [int(i) for i in list(cnpj[:8])]
-
-            if cnpj2 == vtemp:
-                return _(u"O CNPJ informado é inválido.")
-
-            tmp = cnpj[:12]
-            ltmp = [int(i) for i in list(tmp)]
-            temp = [int(i) for i in list(cnpj)]
-            prod = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
-
-            while len(ltmp) < 14:
-                R = sum([x*y for (x, y) in zip(ltmp, prod)])%11
-                if R >= 2:
-                    f = 11 - R
-                else:
-                    f = 0
-                ltmp.append(f)
-                prod.insert(0, 6)
-            if temp != ltmp:
-                return _(u"O CNPJ informado é inválido.")
-        return True
+        cnpj = digits[:12]
+        prod = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
+        while len(cnpj) < 14:
+            r = sum([x*y for (x, y) in zip(cnpj, prod)])%11
+            if r > 1:
+                f = 11 - r
+            else:
+                f = 0
+            cnpj.append(f)
+            prod.insert(0, 6)
+        return ((cnpj == digits) and True) or \
+                _(u"O CNPJ informado é inválido.")
 
 
 listValidators.append(ValidadorCNPJ('isCNPJ',
