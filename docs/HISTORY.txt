@@ -1,7 +1,7 @@
 Changelog
 ----------
 
-1.1.1 (unreleased)
+1.2 (2012-07-24)
 ^^^^^^^^^^^^^^^^^^
 
     * Support to new Brazilian cellphone pattern, with 9 digits [ericof]
