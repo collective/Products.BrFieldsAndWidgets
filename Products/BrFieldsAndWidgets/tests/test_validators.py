@@ -33,6 +33,7 @@ class TestValidorsRegistration(unittest.TestCase):
         v = validation.validatorFor('isBrPhone')
         self.failUnlessEqual(v('(11)38982121'), 1)
         self.failIfEqual(v('113898-212121'), 1)
+        self.failUnlessEqual(v('11987772121'), 1)
 
 
 class TestCPFValidator(unittest.TestCase):
