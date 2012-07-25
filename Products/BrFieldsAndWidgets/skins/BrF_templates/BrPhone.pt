@@ -41,10 +41,10 @@
 
                     </select>)
                 <input tal:attributes="name python:'a%s' % fieldName;
-                                       value python:here.phoneFormat(value,'phone')" type="text" size="8" maxlength="8" onKeyUp="updatePhone(this);" onchange="updatePhone(this);">
+                                       value python:here.phoneFormat(value,'phone')" type="text" size="9" maxlength="9" onKeyUp="updatePhone(this);" onchange="updatePhone(this);">
                 
                 <input type="hidden" tal:attributes="name fieldName;
-                                       value value" maxlength="10">
+                                       value value" maxlength="11">
             </metal:fill>            
         </metal:use>
     </metal:define>
