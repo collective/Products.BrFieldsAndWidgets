@@ -140,6 +140,7 @@ listValidators.append(ValidadorCEP('isCEP',
 class ValidadorBrPhone:
     """
     Validador para telefones brasileiros. Suportando os formatos:
+        XXXXXXXXXX (11955553211) - Novos celulares
         XXXXXXXXXX (1155553211) - Novos telefones
         XXXXXXXXX  (115552133) - Antigos telefones
         0n00XXXXXXX (n sendo 3 ou 8)
@@ -167,6 +168,10 @@ class ValidadorBrPhone:
             if not((self.validate_cng(phone[:4])) and (len_phone in [10, 11])):
                 status = False
         elif not((self.validate_ddd(phone[:2])) and (len_phone in [9, 10])):
+            status = False
+        elif not((self.validate_ddd(phone[:2])) and
+                 ((len_phone == 11) and (phone[3] == '9'))):
+            # validate new cellphones
             status = False
 
         return status or _(u"Telefone inválido")
