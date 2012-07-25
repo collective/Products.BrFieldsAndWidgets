@@ -4,7 +4,7 @@ Changelog
 1.1.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+    * Support to new Brazilian cellphone pattern, with 9 digits [ericof]
 
 
 1.1 (2011-12-21)
