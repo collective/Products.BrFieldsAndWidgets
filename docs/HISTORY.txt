@@ -4,7 +4,7 @@ Changelog
 1.2.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+    * Fix packaging -- add README.rst [ericof]
 
 
 1.2 (2012-07-24)

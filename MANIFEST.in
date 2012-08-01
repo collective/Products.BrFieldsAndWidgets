@@ -1,2 +1,4 @@
+include *.rst
 recursive-include Products *
+recursive-include docs *
 global-exclude *pyc
