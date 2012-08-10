@@ -163,16 +163,17 @@ class ValidadorBrPhone:
             return _(u"Telefone inválido")
         phone = ''.join([c for c in value if c.isdigit()])
         len_phone = len(phone)
-        status = True
+        status = False
+#        import pdb;pdb.set_trace()
         if phone.startswith('0'):
-            if not((self.validate_cng(phone[:4])) and (len_phone in [10, 11])):
-                status = False
-        elif not((self.validate_ddd(phone[:2])) and (len_phone in [9, 10])):
-            status = False
-        elif not((self.validate_ddd(phone[:2])) and
-                 ((len_phone == 11) and (phone[3] == '9'))):
-            # validate new cellphones
-            status = False
+            if self.validate_cng(phone[:4]) and (len_phone in [10, 11]):
+                status = True
+        elif self.validate_ddd(phone[:2]) and (len_phone in [9, 10]):
+            status = True
+        elif (self.validate_ddd(phone[:2])) and (phone[:2] == '11'):
+            if (len_phone == 11) and  (phone[2] == '9'):
+                # validate new cellphones
+                status = True
 
         return status or _(u"Telefone inválido")
 

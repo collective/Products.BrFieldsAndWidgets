@@ -34,6 +34,8 @@ class TestValidorsRegistration(unittest.TestCase):
         self.failUnlessEqual(v('(11)38982121'), 1)
         self.failIfEqual(v('113898-212121'), 1)
         self.failUnlessEqual(v('11987772121'), 1)
+        self.failIfEqual(v('11887772121'), 1)
+        self.failIfEqual(v('21987772121'), 1)
 
 
 class TestCPFValidator(unittest.TestCase):
